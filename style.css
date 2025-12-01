@@ -1,0 +1,566 @@
+/* --- 1. CORE STYLES & RESET --- */
+:root {
+    --primary-color: #4f46e5; /* Indigo 600 */
+    --primary-dark: #4338ca;  /* Indigo 700 */
+    --text-color: #1f2937;    /* Gray 800 */
+    --bg-light: #f9fafb;      /* Gray 50 */
+    --footer-bg: #111827;     /* Gray 900 */ /* Used in footer background */
+    --footer-text: #d1d5db;   /* Gray 300 for general footer text */
+    --footer-link: #9ca3af;   /* Gray 400 for links */
+    --footer-link-hover: #818cf8; /* Light Indigo for link hover */
+    --footer-border: #374151; /* Gray 700 for dividers */
+    --btn-secondary-hover: #eef2ff; /* Indigo 50 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: #4b5563; /* Gray 600 */
+    font-size: 1.15rem;
+}
+
+/* --- 2. BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem; /* Adjusted from 1.5rem to 2rem */
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s; /* Adjusted from background-color 0.3s, transform 0.2s */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(79, 70, 229, 0.4); /* Added box shadow */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent; /* Changed from white */
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover); /* Added subtle background */
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* CTA Button specifically for Navigation */
+.cta-button {
+    padding: 0.5rem 1.25rem; /* Specific padding for nav */
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 9999px; /* Pill shape */
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+
+/* --- 3. HEADER & NAVIGATION --- */
+.header {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+
+/* --- 4. HERO SECTION --- */
+.hero {
+    position: relative;
+    background-image: url('images/corporate-gala-hero.jpg'); /* You need to replace this image */
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content .seo-heading {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.hero-actions .btn {
+    margin-right: 1rem;
+}
+
+/* --- 5. SERVICES SECTION --- */
+.services {
+    background-color: white;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+/* --- 6. PORTFOLIO GALLERY STYLES --- */
+.portfolio {
+    background-color: white;
+}
+
+.portfolio-scroll-container {
+    /* 1 साल के ग्रुप की अनुमानित ऊँचाई: ~370px */
+    max-height: 370px; 
+    overflow-y: scroll; /* Vertical scrollbar लागू करता है */
+    padding-right: 15px; /* स्क्रॉल बार के लिए जगह */
+    margin-bottom: 2rem;
+    scroll-snap-type: y mandatory;
+}
+
+/* Scrollbar Style for vertical container */
+.portfolio-scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.portfolio-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+.portfolio-scroll-container::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+
+.portfolio-year-group {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb; /* Gray 200 */
+    margin-bottom: 2rem;
+    scroll-snap-align: start; 
+}
+
+.portfolio-year-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+.gallery-year-header {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.gallery-year-header h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: left;
+}
+
+/* Horizontal Scroller Style for Images */
+.portfolio-scroller {
+    display: flex; /* Makes all images sit in one row */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 1rem;
+    padding-bottom: 1rem; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin; /* Firefox */
+}
+/* Chrome/Safari Scrollbar for horizontal scroller */
+.portfolio-scroller::-webkit-scrollbar {
+    height: 6px;
+}
+.portfolio-scroller::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.portfolio-scroller img {
+    flex-shrink: 0; 
+    width: 300px; 
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.portfolio-scroller img:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 7. CONTACT FORM --- */
+.contact-section {
+    background-color: var(--bg-light);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #d1d5db; /* Gray 300 */
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button.btn-primary {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* --- 8. FOOTER --- */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text); /* Use variable for text color */
+    padding: 3rem 0;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-title {
+    font-size: 1.25rem; /* Adjusted font size */
+    font-weight: 700;
+    margin-bottom: 0.75rem; /* Adjusted margin */
+    color: white; /* Title color is white */
+}
+
+.footer-col p {
+    margin-bottom: 0.5rem;
+    color: var(--footer-text); /* Gray 300 */
+}
+
+.footer-col a {
+    color: var(--footer-link); /* Gray 400 */
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--footer-link-hover); /* Light Indigo hover */
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0; /* Ensure lists have no padding */
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Make copyright span full width within the grid */
+.copyright {
+    grid-column: 1 / -1; 
+    margin-top: 1.5rem;
+    font-size: 0.875rem; /* Adjusted font size */
+    color: #6b7280 !important; /* Gray 500 */
+    text-align: center; 
+    padding-top: 1rem;
+    border-top: 1px solid var(--footer-border); /* Separator line using variable */
+}
+
+
+/* --- 9. MEDIA QUERIES (RESPONSIVENESS) --- */
+/* Mobile/Tablet Navigation */
+@media (max-width: 1023px) {
+    .navbar {
+        padding: 0.75rem 1.5rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below the header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        z-index: 990;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 0;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .cta-button {
+        margin: 1rem 1.5rem 0.5rem 1.5rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        height: 55vh;
+    }
+    .hero-content .seo-heading { 
+        font-size: 2.25rem; 
+        text-align: center; 
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    .hero-actions { 
+        display: flex; 
+        flex-direction: column; 
+        gap: 1rem; 
+    }
+    .hero-actions .btn {
+        margin-right: 0;
+    }
+    
+    /* Services adjustment */
+    .section {
+        padding: 3rem 0;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .service-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Portfolio adjustment */
+    .portfolio-scroll-container {
+        /* Mobile: एक साल को दिखाने के लिए कम हाइट */
+        max-height: 45vh; 
+    }
+    
+    @media (min-width: 768px) {
+        /* Tablet footer: 3 columns on tablet (768px+) */
+        .footer-grid {
+            grid-template-columns: repeat(3, 1fr);
+            text-align: left;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        /* Mobile footer: 1 column */
+        .footer-grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .footer-col {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--footer-border); 
+        }
+        .footer-col:last-child {
+            border-bottom: none;
+        }
+        .portfolio-scroller img {
+            width: 200px; 
+        }
+    }
+
+    /* Default mobile footer styles (applied below 1023px) */
+    .footer-col ul {
+        padding: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Ensure desktop menu is always displayed on large screens */
+    .nav-links { display: flex !important; }
+    .menu-toggle { display: none; }
+}
+/* --- 10. LIGHTBOX STYLES (New Section) --- */
+.lightbox {
+    /* Full screen overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Above everything else */
+    cursor: pointer; /* Indicates it's clickable to close */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox img {
+    /* Image inside the lightbox */
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9); /* Start slightly smaller */
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox.active img {
+    transform: scale(1); /* Zoom in when active */
+}
